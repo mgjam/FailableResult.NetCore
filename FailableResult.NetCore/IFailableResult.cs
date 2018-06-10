@@ -3,8 +3,8 @@
 namespace FailableResult.NetCore
 {
     /// <summary>
-    /// Specifies a result which is not available in case of failure.
-    /// Result is either of type <see cref="TResult"/>, or of type <see cref="TFailure"/>
+    /// Specifies a failable result.
+    /// Result is either of value <see cref="TResult"/>, or of type <see cref="TFailure"/>
     /// </summary>
     /// <typeparam name="TResult">Type of the sucessful result</typeparam>
     /// <typeparam name="TFailure">Type of the failure</typeparam>
