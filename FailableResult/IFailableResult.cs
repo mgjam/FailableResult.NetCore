@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FailableResult.NetCore
+namespace FailableResult
 {
     /// <summary>
     /// Specifies a failable result.

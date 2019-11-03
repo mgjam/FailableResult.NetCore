@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Threading.Tasks;
 
-namespace FailableResult.NetCore
+namespace FailableResult
 {
     public class SuccessResult<TResult, TFailure> : IFailableResult<TResult, TFailure>
     {
-        public static IFailableResult<TResult, TFailure> Create(TResult result) => new SuccessResult<TResult, TFailure>(result);
-
-        public static Task<IFailableResult<TResult, TFailure>> CreateAsync(TResult result) => Task.FromResult(Create(result));
+        public static IFailableResult<TResult, TFailure> Create(TResult result) =>
+            new SuccessResult<TResult, TFailure>(result);
 
         public TResult Result { get; }
 
