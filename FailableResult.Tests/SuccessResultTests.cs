@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Threading.Tasks;
 
 namespace FailableResult.Tests
 {
@@ -16,6 +17,15 @@ namespace FailableResult.Tests
                 result,
                 successResult.Handle(r => r, f => string.Empty));
             Assert.AreEqual(result, (successResult as SuccessResult<string,bool>).Result);
+        }
+
+        [Test]
+        public async Task Should_Create_Success_Async_Result_When_Factory_Method_Used()
+        {
+            var result = "success";
+            var successAsyncResult = SuccessResult<string, bool>.CreateAsync(result);
+            var successResult = await successAsyncResult;
+            Assert.AreEqual(result, (successResult as SuccessResult<string, bool>).Result);
         }
 
         [Test]
